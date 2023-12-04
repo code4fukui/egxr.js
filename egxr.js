@@ -9,7 +9,8 @@ export * as THREE from "https://code4fukui.github.io/three.js/build/three.module
 // add css
 const link = document.createElement("link");
 link.rel = "stylesheet";
-link.href = "./style.css";
+const base = location.href.indexOf("/127.0.0.1") >= 0 ? "." : "https://code4fukui.github.io/egxr.js";
+link.href =  base + "/style.css";
 document.head.appendChild(link);
 
 export const scene = new THREE.Scene();
