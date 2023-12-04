@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+	background-color: #eee;
+	font-family: sans-serif;
+}
+header {
+	position: absolute;
+	background-color: rgba(155, 155, 155, 0.5);
+	padding: 0.5em 1em;
+	margin: 0.5em;
+	color: #111;
+}
+header h1 {
+	margin: 0.5em 0;
+}
+a {
+	color: #228 !important;
+}
+#ARButton {
+  color: black;
+  border: 1px solid black;
+}

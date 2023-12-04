@@ -1,0 +1,15 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+// TorusGeometry(radius, tube, radialSegments, tubularSegments, arc)
+const geo = new THREE.TorusGeometry(1, .2, 8, 16, Math.PI * 2);
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>

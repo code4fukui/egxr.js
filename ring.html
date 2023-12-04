@@ -1,0 +1,16 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+// RingGeometry(innerRadius : Float, outerRadius : Float, thetaSegments : Integer, phiSegments : Integer, thetaStart : Float, thetaLength : Float)
+const geo = new THREE.RingGeometry(1, 0.5, 16);
+const wireframe = true;
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0088, wireframe });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>

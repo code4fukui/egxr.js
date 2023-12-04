@@ -1,0 +1,15 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+// CapsuleGeometry(radius : Float, length : Float, capSegments : Integer, radialSegments : Integer)
+const geo = new THREE.CapsuleGeometry(.5, 1, 4, 5);
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>

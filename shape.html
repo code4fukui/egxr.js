@@ -1,0 +1,26 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+const shape = new THREE.Shape();
+shape.moveTo(5, 5);
+shape.bezierCurveTo(5, 5, 4, 0, 0, 0);
+shape.bezierCurveTo(-6, 0, -6, 7, -6, 7);
+shape.bezierCurveTo(-6, 11, -3, 15.4, 5, 19);
+shape.bezierCurveTo(12, 15.4, 16, 11, 16, 7);
+shape.bezierCurveTo(16, 7, 16, 0, 10, 0);
+shape.bezierCurveTo(7, 0, 5, 5, 5, 5);
+
+const geo = new THREE.ShapeGeometry(shape);
+const wireframe = true;
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0088, wireframe });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+mesh.scale.multiplyScalar(0.08);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>

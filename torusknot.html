@@ -1,0 +1,15 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+// TorusKnotGeometry(radius, tube, tubularSegments, radialSegments, p : Integer, q : Integer)
+const geo = new THREE.TorusKnotGeometry(.5, .1, 64, 8, 3, 4);
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>

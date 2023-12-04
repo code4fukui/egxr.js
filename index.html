@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<title>egxr.js</title>
+</head>
+<body>
+
+<header>
+	<h1>egxr.js</h1>
+	<ol>
+		<li>1D geometry</li>
+		<ol>
+			<li><a href=line.html>line</a></li>
+			<li><a href=path.html>path</a></li>
+		</ol>
+		<li>2D geometry</l1>
+		<ol>
+			<li><a href=plane.html>plane</a></li>
+			<li><a href=circle.html>circle</a></li>
+			<li><a href=ring.html>ring</a></li>
+			<li><a href=shape.html>shape</a></li>
+		</ol>
+		<li>3D geometry</l1>
+		<ol>
+			<li><a href=box.html>box</a></li>
+			<li><a href=cone.html>cone</a></li>
+			<li><a href=cylinder.html>cylinder</a></li>
+			<li><a href=sphere.html>sphere</a></li>
+			<li><a href=tetrahedron.html>tetrahedron</a></li>
+			<li><a href=octahedron.html>octahedron</a></li>
+			<li><a href=icosahedron.html>icosahedron</a></li>
+			<li><a href=dodecachedron.html>dodecachedron</a></li>
+			<li><a href=capsule.html>capsule</a></li>
+			<li><a href=torus.html>torus</a></li>
+			<li><a href=torusknot.html>torusknot</a></li>
+		</ol>
+	</ol>
+	LIB: <a href="https://github.com/code4fukui/egxr/">src on GitHub</a><br>
+</header>
+
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+// IcosahedronGeometry(radius : Float, detail : Integer)
+const geo = new THREE.IcosahedronGeometry(1, 1);
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+renderer.setAnimationLoop(() => {
+	mesh.position.z = -2;
+	mesh.rotation.y += .01;
+	renderer.render(scene, camera);
+});
+</script>
+</body>
+</html>
