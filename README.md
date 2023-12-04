@@ -6,7 +6,7 @@
 
 ```html
 <script type="module">
-import { THREE, scene, camera, renderer } from "./egxr.js";
+import { THREE, scene, camera, renderer } from "https://code4fukui.github.io/egxr.js/egxr.js";
 
 const geo = new THREE.BoxGeometry(0.5, 1, 1.5);
 const wireframe = true;
