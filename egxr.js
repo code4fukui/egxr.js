@@ -15,7 +15,7 @@ link.href =  base + "/style.css";
 document.head.appendChild(link);
 
 export const scene = new THREE.Scene();
-export const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
+export const camera = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.01, 1000);
 export const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setPixelRatio(devicePixelRatio);
 renderer.setSize(innerWidth, innerHeight);
