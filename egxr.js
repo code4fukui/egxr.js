@@ -1,8 +1,9 @@
 //import * as THREE from "three";
 import * as THREE from "https://code4fukui.github.io/three.js/build/three.module.js";
-//import { ARButton } from "three/addons/webxr/ARButton.js";
-//import { ARButton } from "https://code4fukui.github.io/three.js/examples/jsm/webxr/ARButton.js";
-import { ARButton } from "./ARButton.js";
+//import { ARButton } from "three/addons/webxr/ARButton.js"; // for test
+//import { ARButton } from "./ARButton.js"; // for test
+//import { ARButton } from "https://code4fukui.github.io/three.js_examples/jsm/webxr/ARButton.js"; // NG
+import { ARButton } from "https://code4fukui.github.io/three.js/examples/jsm/webxr/ARButton.js";
 
 //export * as THREE from "three";
 export * as THREE from "https://code4fukui.github.io/three.js/build/three.module.js";
