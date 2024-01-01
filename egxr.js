@@ -43,3 +43,6 @@ scene.add(ambientLight);
 export const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
 directionalLight.position.set(0, 0, 1);
 scene.add(directionalLight);
+
+// for AR
+camera.position.y = 1.4;
