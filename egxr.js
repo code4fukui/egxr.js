@@ -3,7 +3,9 @@ import * as THREE from "https://code4fukui.github.io/three.js/build/three.module
 //import { ARButton } from "three/addons/webxr/ARButton.js"; // for test
 //import { ARButton } from "./ARButton.js"; // for test
 //import { ARButton } from "https://code4fukui.github.io/three.js_examples/jsm/webxr/ARButton.js"; // NG
-import { ARButton } from "https://code4fukui.github.io/three.js/examples/jsm/webxr/ARButton.js";
+//import { ARButton } from "https://code4fukui.github.io/three.js/examples/jsm/webxr/ARButton.js";
+//import { XRButton as ARButton } from "https://code4fukui.github.io/vr-makeitrain/XRButton.js"; // ok for Meta Quest, NG for Vision Pro
+import { XRButton } from 'https://code4fukui.github.io/fisheyes-viewer/XRButton.js';
 
 //export * as THREE from "three";
 export * as THREE from "https://code4fukui.github.io/three.js/build/three.module.js";
@@ -26,8 +28,10 @@ renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 // add a XR button
-const arbtn = ARButton.createButton(renderer);
-document.body.appendChild(arbtn);
+//const xropt = { spaceType: "local-floor" };
+const xropt = { spaceType: "local" };
+const xrbtn = XRButton.createButton(renderer, xropt);
+document.body.appendChild(xrbtn);
 
 // support resizing
 addEventListener("resize", () => {
