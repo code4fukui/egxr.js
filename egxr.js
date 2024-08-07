@@ -5,7 +5,7 @@ import * as THREE from "https://code4fukui.github.io/three.js/build/three.module
 //import { ARButton } from "https://code4fukui.github.io/three.js_examples/jsm/webxr/ARButton.js"; // NG
 //import { ARButton } from "https://code4fukui.github.io/three.js/examples/jsm/webxr/ARButton.js";
 //import { XRButton as ARButton } from "https://code4fukui.github.io/vr-makeitrain/XRButton.js"; // ok for Meta Quest, NG for Vision Pro
-import { XRButton } from 'https://code4fukui.github.io/fisheyes-viewer/XRButton.js';
+import { XRButton } from "https://code4fukui.github.io/fisheyes-viewer/XRButton.js";
 
 //export * as THREE from "three";
 export * as THREE from "https://code4fukui.github.io/three.js/build/three.module.js";
@@ -28,8 +28,8 @@ renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 // add a XR button
-const xropt = { spaceType: "local-floor" }; // y 軸の値が床面を 0 とする
-//const xropt = { spaceType: "local" }; // 閲覧者の位置の近くに原点を持つ追跡空間
+//const xropt = { spaceType: "local-floor" }; // y 軸の値が床面を 0 とする NG for Meta Quest??
+const xropt = { spaceType: "local" }; // 閲覧者の位置の近くに原点を持つ追跡空間
 // unbounded
 // unbounded-floor ?
 // boundded-floor
