@@ -28,8 +28,11 @@ renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 // add a XR button
-//const xropt = { spaceType: "local-floor" };
-const xropt = { spaceType: "local" };
+const xropt = { spaceType: "local-floor" }; // y 軸の値が床面を 0 とする
+//const xropt = { spaceType: "local" }; // 閲覧者の位置の近くに原点を持つ追跡空間
+// unbounded
+// unbounded-floor ?
+// boundded-floor
 const xrbtn = XRButton.createButton(renderer, xropt);
 document.body.appendChild(xrbtn);
 
