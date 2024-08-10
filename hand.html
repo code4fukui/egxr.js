@@ -1,0 +1,34 @@
+<script type="module">
+import { THREE, scene, camera, renderer } from "./egxr.js";
+
+const geo = new THREE.BoxGeometry(0.05, 0.05, 0.1);
+const wireframe = true;
+const mat = new THREE.MeshBasicMaterial({ color: 0xff0088, wireframe });
+const mesh = new THREE.Mesh(geo, mat);
+scene.add(mesh);
+
+const ctrl = renderer.xr.getController(0);
+ctrl.addEventListener("selectstart", () => ctrl.selected = true);
+ctrl.addEventListener("selectend", () => ctrl.selected = false);
+ 
+renderer.setAnimationLoop(() => {
+	const ctrl = renderer.xr.getController(0);
+	if (ctrl) {
+		/*
+		mesh.position.x = ctrl.position.x;
+		mesh.position.y = ctrl.position.y;
+		mesh.position.z = ctrl.position.z;
+		*/
+		mesh.position.copy(ctrl.position);
+		mesh.quaternion.copy(ctrl.quaternion);
+		//mesh.rotation.y += .01;
+		if (ctrl.selected) {
+			mesh.rotation.x += Math.PI / 2;
+		}
+	} else {
+		mesh.position.z = -2;
+		mesh.rotation.y += .01;
+	}
+	renderer.render(scene, camera);
+});
+</script>

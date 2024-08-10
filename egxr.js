@@ -28,12 +28,13 @@ renderer.xr.enabled = true;
 document.body.appendChild(renderer.domElement);
 
 // add a XR button
-//const xropt = { spaceType: "local-floor" }; // y 軸の値が床面を 0 とする NG for Meta Quest??
-const xropt = { spaceType: "local" }; // 閲覧者の位置の近くに原点を持つ追跡空間
+//const sessioninit = { spaceType: "local-floor" }; // y 軸の値が床面を 0 とする NG for Meta Quest??
+const sessioninit = { spaceType: "local" }; // 閲覧者の位置の近くに原点を持つ追跡空間
 // unbounded
 // unbounded-floor ?
 // boundded-floor
-const xrbtn = XRButton.createButton(renderer, xropt);
+sessioninit.optionalFeatures = ["hand-tracking"];
+const xrbtn = XRButton.createButton(renderer, sessioninit);
 document.body.appendChild(xrbtn);
 
 // support resizing
