@@ -54,3 +54,17 @@ scene.add(directionalLight);
 
 // for AR
 camera.position.y = 1.4;
+
+// handtracking
+export const ctrls = [
+	renderer.xr.getController(0),
+	renderer.xr.getController(1),
+];
+for (const ctrl of ctrls) {
+	if (!ctrl) {
+		alert("can't connect controller", i);
+		continue;
+	}
+	ctrl.addEventListener("selectstart", () => ctrl.selected = true);
+	ctrl.addEventListener("selectend", () => ctrl.selected = false);
+}
