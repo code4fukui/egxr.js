@@ -1,14 +1,6 @@
-<script type="importmap">
-{
-	"imports": {
-		"three": "https://code4fukui.github.io/three.js/build/three.module.js",
-		"three/addons/": "https://code4fukui.github.io/three.js/examples/jsm/"
-	}
-}
-</script>
 <script type="module">
 import { THREE, scene, camera, renderer } from "./egxr.js";
-import { STLExporter } from "https://code4fukui.github.io/three.js_examples/jsm/exporters/STLExporter.js";
+import { mesh2stl } from "https://code4fukui.github.io/STL/mesh2stl.js";
 
 // TorusKnotGeometry(radius, tube, tubularSegments, radialSegments, p : Integer, q : Integer)
 const geo = new THREE.TorusKnotGeometry(.5, .5 * 0.15, 300, 20, 6, 4);
@@ -23,10 +15,8 @@ renderer.setAnimationLoop(() => {
 });
 
 const exportSTL = (mesh) => {
-	const exporter = new STLExporter();
-	const stlString = exporter.parse(mesh);
-
-	const blob = new Blob([stlString], { type: "text/plain" });
+	const stl = mesh2stl(mesh);
+	const blob = new Blob([stl], { type: "model/stl" });
 	const link = document.createElement("a");
 	link.style.display = "none";
 	document.body.appendChild(link); // for Firefox
