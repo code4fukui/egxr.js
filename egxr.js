@@ -53,7 +53,15 @@ directionalLight.position.set(0, 0, 1);
 scene.add(directionalLight);
 
 // for AR
-camera.position.y = 1.4;
+export const isXRDevice = async () => {
+  if (!navigator.xr) return false;
+  const supported = await navigator.xr.isSessionSupported("immersive-vr");
+  return supported;
+};
+
+isXRDevice().then((b) => {
+	if (b) camera.position.y = 1.4;
+});
 
 // handtracking
 export const ctrls = [
