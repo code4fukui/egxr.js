@@ -4,7 +4,7 @@
 
 ## デモ
 
-ライブデモをご覧ください: **https://code4fukui.github.io/egxr.js/**
+ライブデモをご覧ください: **https://github.com/code4fukui/egxr.js
 
 メインデモページには、さまざまなジオメトリやインタラクションの例へのリンクが含まれています。
 

@@ -6,7 +6,7 @@
 
 ## Demo
 
-Explore the live examples: **https://code4fukui.github.io/egxr.js/**
+Explore the live examples: **https://github.com/code4fukui/egxr.js
 
 The main demo page includes links to various geometry and interaction examples.
 
